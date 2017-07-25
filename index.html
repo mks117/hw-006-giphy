@@ -17,31 +17,53 @@
 	<!-- style.css -->
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 
-	<!-- game.js -->
-	<script type="text/javascript" src="assets/javascript.js"></script>
+	<!-- app.js -->
+	<script type="text/javascript" src="assets/app.js"></script>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="jumbotron">
+				<!-- Topics -->
+				<div class="jumbotron" id="topics">
 					<h1>GIPHY Viewer!</h1>
 					<h3>Pick a topic:</h3>
-					<button class="btn btn-primary" onclick="GenerateGifs('animals')">Animals</button>
-					<button class="btn btn-primary" onclick="GenerateGifs('cartoons')">Cartoons</button>
-					<button class="btn btn-primary" onclick="GenerateGifs('reactions')">Reactions</button>
+					<button class="btn btn-primary topic" data-topic="animals">Animals</button>
+					<button class="btn btn-primary topic" data-topic="cartoons">Cartoons</button>
+					<button class="btn btn-primary topic" data-topic="reactions">Reactions</button>
 					<form>
 						<div class="form-group">
 						<br>
 							<label>Add a topic:</label>
-							<input type="text" class="form-control" id="input-topic" placeholder="Enter topic">
+							<br>
+							<input type="text" id="input-topic" placeholder="Enter topic">
 						</div>
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
 				</div>
-				<div class="jumbotron">
-					<h1 id="h1-topic"></h1>
-					<h4 id="h4-back-to-topics"></h4>
+
+				<!-- Sub Topics -->
+				<div class="jumbotron"  id="sub-topics" style="display: none">
+					<h1>Sub Topics of <span id="span-topic">Topic</span></h1>
+					<div id="sub-buttons"></div>
+					<button class="btn btn-primary" onclick="LoadScreen(0)">Back to topics</button>
+					<form>
+						<div class="form-group">
+						<br>
+							<label>Add a sub-topic:</label>
+							<br>
+							<input type="text" id="input-sub-topic" placeholder="Enter topic">
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="gifs">
+					<img src="https://media0.giphy.com/media/DgLsbUL7SG3kI/giphy_s.gif" data-still="https://media0.giphy.com/media/DgLsbUL7SG3kI/giphy_s.gif" data-animate="https://media0.giphy.com/media/DgLsbUL7SG3kI/giphy.gif" data-state="still" class="gif">
+					<img src="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-still="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-animate="http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still" class="gif">
 				</div>
 			</div>
 		</div>
